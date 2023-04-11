@@ -8,7 +8,7 @@ import MetaData from './layout/MetaData'
 import Loader from './layout/Loader'
 
 import { useDispatch, useSelector } from 'react-redux'
-// import { useAlert } from 'react-alert';
+import { useAlert } from 'react-alert';
 import { getProducts } from '../actions/productActions'
 import Product from './product/Product'
 
@@ -37,7 +37,7 @@ const Home = () => {
     //     'Home'
     // ]
 
-    // const alert = useAlert();
+    const alert = useAlert();
     const dispatch = useDispatch();
 
     const { loading, products, error, productsCount, resPerPage, filteredProductsCount } = useSelector(state => state.products)
@@ -45,16 +45,17 @@ const Home = () => {
     // const keyword = match.params.keyword
 
     useEffect(() => {
-        // if (error) {
-        //     return alert.error(error)
-        // }
 
-        // dispatch(getProducts(keyword, currentPage, price, category, rating));
+        if (error) {
+            alert.error(error)
+        }
         dispatch(getProducts());
+        
+        // dispatch(getProducts(keyword, currentPage, price, category, rating));
 
 
         // [dispatch, alert, error, keyword, currentPage, price, category, rating]
-    }, [dispatch])
+    }, [dispatch, alert, error])
 
     // function setCurrentPageNo(pageNumber) {
     //     setCurrentPage(pageNumber)

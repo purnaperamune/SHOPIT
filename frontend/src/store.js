@@ -9,7 +9,7 @@ import { productsReducer, newProductReducer, productReducer, productDetailsReduc
 
 const reducer = combineReducers({
     products: productsReducer,
-    // productDetails: productDetailsReducer,
+    productDetails: productDetailsReducer,
     // newProduct: newProductReducer,
     // product: productReducer,
     // productReviews: productReviewsReducer,
