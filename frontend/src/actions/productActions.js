@@ -32,7 +32,6 @@ import {
     CLEAR_ERRORS
 
 } from '../constants/productConstants'
-// const getProducts = (keyword = '', currentPage = 1, price, category, rating = 0) => async (dispatch) => {
 export const getProducts = (keyword = '', currentPage = 1, price, category, rating = 0) => async (dispatch) => {
     try {
 
