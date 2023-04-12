@@ -53,10 +53,11 @@ const Header = () => {
                 </div>
 
                 <div className="col-12 col-md-6 mt-2 mt-md-0">
-                    <h1> Hellowwww </h1>
+                    {/* <h1> Hellowwww </h1>
                     <Routes>
                     <Route render={({ history }) => <Search history={history} />} />
-                    </Routes>
+                    </Routes> */}
+                    <Search />
                     
                 </div>
 

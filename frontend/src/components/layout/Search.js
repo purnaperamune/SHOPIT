@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import '../../App.css'
+import { useNavigate } from 'react-router-dom';
 
 const Search = ({ history }) => {
+    const navigate = useNavigate();
 
     const [keyword, setKeyword] = useState('');
 
@@ -9,9 +11,9 @@ const Search = ({ history }) => {
         e.preventDefault()
 
         if (keyword.trim()) {
-            history.pushState(`/search/${keyword}`)
+            navigate(`/search/${keyword}`)
         } else {
-            history.pushState('/')
+            navigate('/')
         }
     }
 
