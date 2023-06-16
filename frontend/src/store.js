@@ -18,7 +18,7 @@ const reducer = combineReducers({
     user: userReducer,
     // allUsers: allUsersReducer,
     // userDetails: userDetailsReducer,
-    // forgotPassword: forgotPasswordReducer,
+    forgotPassword: forgotPasswordReducer,
     // cart: cartReducer,
     // newOrder: newOrderReducer,
     // myOrders: myOrdersReducer,
