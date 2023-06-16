@@ -15,7 +15,7 @@ const reducer = combineReducers({
     // productReviews: productReviewsReducer,
     // review: reviewReducer,
     auth: authReducer,
-    // user: userReducer,
+    user: userReducer,
     // allUsers: allUsersReducer,
     // userDetails: userDetailsReducer,
     // forgotPassword: forgotPasswordReducer,
