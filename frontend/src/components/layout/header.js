@@ -1,45 +1,25 @@
-// import React, { Fragment } from 'react'
-
-// import '../../App.css'
-
-// const Header = () => {
-//     return (
-//         <Fragment>
-//             <nav className="navbar row">
-//                 <div className="col-12 col-md-3">
-//                     <div className="navbar-brand">
-//                         <img src="/images/shopit_logo.png" />
-//                     </div>
-//                 </div>
-//             </nav>
-//         </Fragment>
-//     )
-// }
-
-// export default Header
-
 import React, { Fragment } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { BrowserRouter as Router, Routes } from 'react-router-dom'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { useAlert } from 'react-alert'
-// import { logout } from '../../actions/userActions'
+import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
+import { logout } from '../../actions/userActions'
 
 import Search from './Search'
 
 import '../../App.css'
 
 const Header = () => {
-    // const alert = useAlert();
-    // const dispatch = useDispatch();
+    const alert = useAlert();
+    const dispatch = useDispatch();
 
-    // const { user, loading } = useSelector(state => state.auth)
+    const { user, loading } = useSelector(state => state.auth)
     // const { cartItems } = useSelector(state => state.cart)
 
-    // const logoutHandler = () => {
-    //     dispatch(logout());
-    //     alert.success('Logged out successfully.')
-    // }
+    const logoutHandler = () => {
+        dispatch(logout());
+        alert.success('Logged out successfully.')
+    }
 
     return (
         <Fragment>
@@ -53,18 +33,13 @@ const Header = () => {
                 </div>
 
                 <div className="col-12 col-md-6 mt-2 mt-md-0">
-                    {/* <h1> Hellowwww </h1>
-                    <Routes>
-                    <Route render={({ history }) => <Search history={history} />} />
-                    </Routes> */}
-                    <Search />
-                    
+                <Routes> <Route render={({ history }) => <Search history={history} />} /> </Routes>
                 </div>
-
-                {/* <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+                
+                <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                     <Link to="/cart" style={{ textDecoration: 'none' }} >
                         <span id="cart" className="ml-3">Cart</span>
-                        <span className="ml-1" id="cart_count">{cartItems.length}</span>
+                        <span className="ml-1" id="cart_count">2</span>
                     </Link>
 
                     {user ? (
@@ -100,7 +75,7 @@ const Header = () => {
                     ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>}
 
 
-                </div> */}
+                </div>
             </nav>
         </Fragment>
     )
