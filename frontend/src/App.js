@@ -16,6 +16,7 @@ import Cart from './components/cart/Cart'
 import Shipping from './components/cart/Shipping'
 import ConfirmOrder from './components/cart/ConfirmOrder'
 import Payment from './components/cart/Payment'
+import OrderSuccess from './components/cart/OrderSuccess'
 
 // Auth or User imports
 import Login from './components/user/login'
@@ -67,6 +68,7 @@ function App() {
             <Route path="/cart" element={<Cart />}  />
             <Route path="/shipping" element={ <ProtectedRoute> <Shipping /></ProtectedRoute>}  />
             <Route path="/order/confirm" element={ <ProtectedRoute> <ConfirmOrder /></ProtectedRoute>}  />
+            <Route path="/success" element={ <ProtectedRoute> <OrderSuccess /></ProtectedRoute>}  />
             <Route path="/payment" element={ <ProtectedRoute> <Payment /></ProtectedRoute>}  />
             
             {/* {stripeApiKey &&

@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-// import { createOrder, clearErrors } from '../../actions/orderActions'
+import { createOrder, clearErrors } from '../../actions/orderActions'
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
@@ -27,6 +27,7 @@ const options = {
 const stripePromise = loadStripe('pk_test_51NQRynHUN31DFPsHo8orNcEqlejPqt8oLhjqlKxGrjmOgm1NVQWxgnTyOAw6pCBjBVkWMh9VXSZgbapTpAjhv5lO00lRFaYhZj');
 const Payment = ({ }) => {
 
+    const navigate = useNavigate();
     const alert = useAlert();
     const stripe = useStripe();
     const elements = useElements();
@@ -38,10 +39,10 @@ const Payment = ({ }) => {
 
     useEffect(() => {
 
-        // if (error) {
-        //     alert.error(error)
-        //     dispatch(clearErrors())
-        // }
+        if (error) {
+            alert.error(error)
+            dispatch(clearErrors())
+        }
 
     }, [dispatch, alert, error])
 
@@ -110,9 +111,10 @@ const Payment = ({ }) => {
                         status: result.paymentIntent.status
                     }
 
-                    // dispatch(createOrder(order))
+                    dispatch(createOrder(order))
 
                     // history.push('/success')
+                    navigate('/success');
                 } else {
                     alert.error('There is some issue while payment processing')
                 }
