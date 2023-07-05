@@ -25,7 +25,7 @@ const Login = ({  }) => {
     useEffect(() => {
 
         if (isAuthenticated) {
-            navigate('/');
+            navigate('/shipping');
         }
 
         if (error) {

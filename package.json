@@ -12,16 +12,20 @@
   "author": "Purna Peramune",
   "license": "ISC",
   "dependencies": {
+    "@stripe/stripe-js": "^1.54.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cloudinary": "^1.37.1",
     "cookie-parser": "^1.4.6",
+    "countries-list": "^2.6.1",
+    "country-list": "^2.3.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
     "nodemailer": "^6.9.1",
+    "stripe": "^12.11.0",
     "validator": "^13.9.0"
   },
   "devDependencies": {
