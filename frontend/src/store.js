@@ -21,9 +21,9 @@ const reducer = combineReducers({
     forgotPassword: forgotPasswordReducer,
     cart: cartReducer,
     newOrder: newOrderReducer,
-    // myOrders: myOrdersReducer,
+    myOrders: myOrdersReducer,
     // allOrders: allOrdersReducer,
-    // orderDetails: orderDetailsReducer,
+    orderDetails: orderDetailsReducer,
     // order: orderReducer,
     // newReview: newReviewReducer
 })

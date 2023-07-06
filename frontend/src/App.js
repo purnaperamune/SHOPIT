@@ -18,6 +18,10 @@ import ConfirmOrder from './components/cart/ConfirmOrder'
 import Payment from './components/cart/Payment'
 import OrderSuccess from './components/cart/OrderSuccess'
 
+// Order Imports
+import ListOrders from './components/order/ListOrders'
+import OrderDetails from './components/order/OrderDetails'
+
 // Auth or User imports
 import Login from './components/user/login'
 import Register from './components/user/Register';
@@ -90,6 +94,9 @@ function App() {
             <Route path="/me" element={ <ProtectedRoute> <Profile /></ProtectedRoute>}/>
             <Route path="/me/update" element={ <ProtectedRoute> <UpdateProfile /></ProtectedRoute>}/>
             <Route path="/password/update" element={ <ProtectedRoute> <UpdatePassword /></ProtectedRoute>}/>
+
+            <Route path="/orders/me" element={ <ProtectedRoute> <ListOrders /></ProtectedRoute>}/>
+            <Route path="/order/:id" element={ <ProtectedRoute> <OrderDetails /></ProtectedRoute>}/>
 
             <Route path="/password/forgot" element={<ForgotPassword />}  />
             <Route path="/password/reset/:token" element={<NewPassword />}  />
