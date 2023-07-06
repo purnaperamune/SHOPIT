@@ -22,6 +22,17 @@ import OrderSuccess from './components/cart/OrderSuccess'
 import ListOrders from './components/order/ListOrders'
 import OrderDetails from './components/order/OrderDetails'
 
+// Admin Imports
+import Dashboard from './components/admin/Dashboard'
+import ProductsList from './components/admin/ProductsList'
+// import NewProduct from './components/admin/NewProduct'
+// import UpdateProduct from './components/admin/UpdateProduct'
+// import OrdersList from './components/admin/OrdersList'
+// import ProcessOrder from './components/admin/ProcessOrder'
+// import UsersList from './components/admin/UsersList'
+// import UpdateUser from './components/admin/UpdateUser'
+// import ProductReviews from './components/admin/ProductReviews'
+
 // Auth or User imports
 import Login from './components/user/login'
 import Register from './components/user/Register';
@@ -102,9 +113,22 @@ function App() {
             <Route path="/password/reset/:token" element={<NewPassword />}  />
             
           </Routes>
+
+
         </div> 
+
+        <Routes>
+        <Route path="/dashboard" isAdmin={true} element={ <ProtectedRoute> <Dashboard /></ProtectedRoute>}/>
+
+        <Route path="/admin/products" isAdmin={true} element={ <ProtectedRoute> <ProductsList /></ProtectedRoute>}/>
+
+        </Routes>
+
+        
+
         <Footer />
       </div>
+      
     </Router>
     
   );
